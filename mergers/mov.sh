@@ -13,7 +13,6 @@ curl -o bin/ffmpeg https://raw.githubusercontent.com/wearemieta/ishoot/master/bi
 # Change permissions for ffmpeg
 chmod +x bin/ffmpeg
 
-
 # Create .ts files
 for file in *.mov;
 	do bin/ffmpeg -i "$file" -c copy -bsf:v h264_mp4toannexb -f mpegts "${file%.mov}".ts;
