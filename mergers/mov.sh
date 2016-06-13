@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Download ffmpeg MacOS binary
+curl -O https://raw.githubusercontent.com/wearemieta/ishoot/master/bin/ffmpeg;
 
 # Setup working dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
