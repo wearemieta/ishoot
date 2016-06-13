@@ -4,14 +4,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR;
 
-# Create local bin directory
-mkdir bin;
+if [ ! -f bin/ffmpeg ]; then
 
-# Download ffmpeg MacOS binary
-curl -o bin/ffmpeg https://raw.githubusercontent.com/wearemieta/ishoot/master/bin/ffmpeg;
+	# Create local bin directory
+	mkdir bin;
 
-# Change permissions for ffmpeg
-chmod +x bin/ffmpeg
+	# Download ffmpeg MacOS binary
+	curl -o bin/ffmpeg https://raw.githubusercontent.com/wearemieta/ishoot/master/bin/ffmpeg;
+
+	# Change permissions for ffmpeg
+	chmod +x bin/ffmpeg
+
+fi
 
 # Create .ts files
 for file in *.mov;
